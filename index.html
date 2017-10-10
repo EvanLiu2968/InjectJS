@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Chrome Auto Task</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
+	<script src="assets/js/autoTask.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">自动任务</h3>
+		</div>
+		<div class="panel-body">
+			<div class="task-item clearfix">
+				<label class="control-label">js代码</label>
+				<textarea class="form-control" rows="6"></textarea>
+			</div>
+			<div class="task-item clearfix">
+				<span class="task-item-text pull-left">间隔分钟</span>
+				<input type="number" class="task-item-input pull-left" id="task-interval" value="10" step="1">
+			</div>
+			<div class="task-item">
+				<span class="task-item-text">自动运行</span>
+				<span class="magic-inline">
+					<input type="checkbox" class="magic-checkbox" id="autoRun" name="autoRun" value="1">
+					<label for="autoRun">&emsp;</label>
+				</span>
+			</div>
+			<div class="container">
+				<button id="btn-run" class="btn btn-primary btn-block">开始执行</button>
+			</div>
+			<div class="task-message-container">
+				<p class="task-message"></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

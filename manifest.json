@@ -1,0 +1,37 @@
+{
+	"browser_action": {
+		"default_icon": "assets/icons/icon128.png",
+		"default_popup": "index.html"
+	},
+	"background": {
+		//"persistent": false,
+		"scripts": ["assets/js/background.js"]
+	},
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"description": "Run Some Simple Auto Tasks",
+	"icons": {
+		"128": "assets/icons/icon128.png",
+		"16": "assets/icons/icon16.png",
+		"48": "assets/icons/icon48.png"
+	},
+	"permissions": [
+		"cookies",
+		"storage",
+		"webRequest",
+		"http://www.appstar.com.cn"
+	],
+	"content_scripts": [{
+		"js": ["assets/js/jquery-3.1.1.min.js",
+				"assets/js/lodash.3.10.1.js",
+				"assets/js/js.cookie.js",
+				"assets/js/autoWorking.js",
+		],
+		"matches": ["http://www.appstar.com.cn/*"],
+		"run_at": "document_end"
+	}],
+	// "key": "evanliu2968",
+	"manifest_version": 2,
+	"name": "Auto Task",
+	// "update_url": "",
+	"version": "0.1"
+}
