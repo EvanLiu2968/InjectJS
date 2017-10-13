@@ -28,6 +28,12 @@ require(['vs/editor/editor.main'], function() {
 		runBtn.onclick = function() {
 			chrome.windows.get(chrome.windows.WINDOW_ID_CURRENT, function(w) {
 				console.log(w);
+				alert("敬请期待！");
+			});
+		}
+		stopBtn.onclick = function() {
+			chrome.windows.get(chrome.windows.WINDOW_ID_CURRENT, function(w) {
+				alert("敬请期待！");
 			});
 		}
 	}

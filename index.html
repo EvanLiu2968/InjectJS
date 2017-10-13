@@ -3,8 +3,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Chrome Auto Task</title>
+	<title>Inject JS</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/checkbox.css" />
 	<link rel="stylesheet" href="assets/css/custom.css" />
 	<script src="assets/js/jquery-3.1.1.min.js"></script>
 	<script src="monaco-editor/min/vs/loader.js"></script>
@@ -26,12 +27,10 @@
 						</div>
 				</div>
 				<div class="col-xs-6">
-						<div class="task-item">
+						<div class="el-checkbox task-item">
 							<span class="task-item-text">自动运行</span>
-							<span class="magic-inline">
-								<input type="checkbox" class="magic-checkbox" id="autoRun" name="autoRun" value="1">
-								<label for="autoRun">&emsp;</label>
-							</span>
+							<input type="checkbox" id="autoRun" name="check" value="1">
+							<label for="autoRun" class="el-checkbox-style"></label>
 						</div>
 				</div>
 			</div>
