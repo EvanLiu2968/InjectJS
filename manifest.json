@@ -18,15 +18,15 @@
 		"cookies",
 		"storage",
 		"webRequest",
-		"http://www.appstar.com.cn"
+		"*"
 	],
 	"content_scripts": [{
 		"js": ["assets/js/jquery-3.1.1.min.js",
 				"assets/js/lodash.3.10.1.js",
-				"assets/js/js.cookie.js",
-				"assets/js/autoWorking.js",
+				"assets/js/js-cookie.js",
+				"assets/js/defaultTask.js"
 		],
-		"matches": ["http://www.appstar.com.cn/*"],
+		"matches": ["https://www.baidu.com/*"],
 		"run_at": "document_end"
 	}],
 	// "key": "evanliu2968",

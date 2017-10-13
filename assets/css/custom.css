@@ -1,22 +1,22 @@
 body {
-	width: 360px;
+	width: 400px;
 }
 .panel {
 	margin-bottom: 0;
 }
 .task-item {
-	margin: 5px 0;
+	margin-bottom:10px;
 }
 .task-item-input {
 	width: 70px;
 	border-radius: 3px;
-	height: 35px;
+	height: 30px;
 	padding: 0 5px;
 }
 .task-item-text {
 	display: inline-block;
 	margin-right:10px;
-	line-height: 37px;
+	line-height: 30px;
 	text-align: center;
 }
 .task-message-container {
@@ -25,6 +25,10 @@ body {
 }
 .task-message-container > p {
 	margin: 5px;
+}
+#editor{
+	height:400px;
+	margin-bottom:10px;
 }
 /*check.css*/
 @keyframes hover-color {

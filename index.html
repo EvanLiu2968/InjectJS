@@ -6,32 +6,42 @@
 	<title>Chrome Auto Task</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="assets/css/custom.css" />
-	<script src="assets/js/autoTask.js"></script>
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<script src="monaco-editor/min/vs/loader.js"></script>
+	<script src="assets/js/injectJS.js"></script>
 </head>
 
 <body>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">自动任务</h3>
+			<h3 class="panel-title">Inject JS</h3>
 		</div>
 		<div class="panel-body">
-			<div class="task-item clearfix">
-				<label class="control-label">js代码</label>
-				<textarea class="form-control" rows="6"></textarea>
+			<div id="editor" class="monaco-editor vs-dark"></div>
+			<div class="row">
+				<div class="col-xs-6">
+						<div class="task-item clearfix">
+							<span class="task-item-text pull-left">间隔秒数</span>
+							<input type="number" class="task-item-input pull-left" id="interval" value="60" step="1" min="0">
+						</div>
+				</div>
+				<div class="col-xs-6">
+						<div class="task-item">
+							<span class="task-item-text">自动运行</span>
+							<span class="magic-inline">
+								<input type="checkbox" class="magic-checkbox" id="autoRun" name="autoRun" value="1">
+								<label for="autoRun">&emsp;</label>
+							</span>
+						</div>
+				</div>
 			</div>
-			<div class="task-item clearfix">
-				<span class="task-item-text pull-left">间隔分钟</span>
-				<input type="number" class="task-item-input pull-left" id="task-interval" value="10" step="1">
-			</div>
-			<div class="task-item">
-				<span class="task-item-text">自动运行</span>
-				<span class="magic-inline">
-					<input type="checkbox" class="magic-checkbox" id="autoRun" name="autoRun" value="1">
-					<label for="autoRun">&emsp;</label>
-				</span>
-			</div>
-			<div class="container">
-				<button id="btn-run" class="btn btn-primary btn-block">开始执行</button>
+			<div class="row">
+				<div class="col-xs-6">
+					<button id="runBtn" class="btn btn-primary btn-block">开始执行</button>
+				</div>
+				<div class="col-xs-6">
+					<button id="stopBtn" class="btn btn-danger btn-block">停止执行</button>
+				</div>
 			</div>
 			<div class="task-message-container">
 				<p class="task-message"></p>

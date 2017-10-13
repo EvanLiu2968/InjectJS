@@ -1,5 +1,8 @@
-#InjectJS
+# InjectJS
 > 可注入JS的chrome extension
+
+chrome api中文文档：[https://chajian.baidu.com](https://chajian.baidu.com/developer/extensions/api_index.html)
+编辑器文档：[https://microsoft.github.io/monaco-editor/](https://microsoft.github.io/monaco-editor/api/index.html)
 
 *先占个坑，以后有时间再写。。。*
 
