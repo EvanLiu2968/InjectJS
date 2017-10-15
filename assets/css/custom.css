@@ -4,29 +4,29 @@ body {
 .panel {
 	margin-bottom: 0;
 }
+#editor {
+	height:390px;
+	margin-bottom:10px;
+}
 .task-item {
 	margin-bottom:10px;
+	position: relative;
+	padding-left:50px;
 }
-.task-item-input {
-	width: 70px;
-	border-radius: 3px;
-	height: 30px;
-	padding: 0 5px;
-}
-.task-item-text {
+.task-item-label {
+	position: absolute;
 	display: inline-block;
+	left:0;
+}
+.task-item-content {
+	position: relative;
+}
+.task-item-content>div {
+	float:left;
 	margin-right:10px;
-	line-height: 30px;
-	text-align: center;
 }
-.task-message-container {
-	clear: both;
-	padding-top: 10px;
-}
-.task-message-container > p {
-	margin: 5px;
-}
-#editor{
-	height:400px;
-	margin-bottom:10px;
+.task-message {
+	margin:0;
+	height:30px;
+	line-height:30px;
 }

@@ -1,15 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Inject JS</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="assets/css/checkbox.css" />
 	<link rel="stylesheet" href="assets/css/custom.css" />
-	<script src="assets/js/jquery-3.1.1.min.js"></script>
-	<script src="monaco-editor/min/vs/loader.js"></script>
-	<script src="assets/js/injectJS.js"></script>
 </head>
 
 <body>
@@ -18,34 +14,47 @@
 			<h3 class="panel-title">Inject JS</h3>
 		</div>
 		<div class="panel-body">
-			<div id="editor" class="monaco-editor vs-dark"></div>
+			<p>请确保内容在script标签中，或引用script资源</p>
+			<div id="editor"></div>
+			<div class="task-item">
+				<label class="task-item-label">mode:</label>
+				<div class="task-item-content clearfix">
+					<div class="el-radio">
+						<span class="margin-r">document start</span>
+						<input type="radio" name="mode" id="mode1" value="document_start" />
+						<label class="el-radio-style" for="mode1"></label>
+					</div>
+					<div class="el-radio">
+						<span class="margin-r">document idle</span>
+						<input type="radio" name="mode" id="mode2" value="document_idle" checked/>
+						<label class="el-radio-style" for="mode2"></label>
+					</div>
+					<div class="el-radio">
+						<span class="margin-r">close</span>
+						<input type="radio" name="mode" id="mode3" value="close" />
+						<label class="el-radio-style" for="mode3"></label>
+					</div>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-xs-6">
-						<div class="task-item clearfix">
-							<span class="task-item-text pull-left">间隔秒数</span>
-							<input type="number" class="task-item-input pull-left" id="interval" value="60" step="1" min="0">
-						</div>
+					<button id="saveBtn" class="btn btn-primary btn-block">Save</button>
 				</div>
 				<div class="col-xs-6">
-						<div class="el-checkbox task-item">
-							<span class="task-item-text">自动运行</span>
-							<input type="checkbox" id="autoRun" name="check" value="1">
-							<label for="autoRun" class="el-checkbox-style"></label>
-						</div>
+					<button id="closeBtn" class="btn btn-danger btn-block">Close</button>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-6">
-					<button id="runBtn" class="btn btn-primary btn-block">开始执行</button>
-				</div>
-				<div class="col-xs-6">
-					<button id="stopBtn" class="btn btn-danger btn-block">停止执行</button>
-				</div>
-			</div>
-			<div class="task-message-container">
-				<p class="task-message"></p>
-			</div>
+			<p class="task-message"></p>
 		</div>
 	</div>
+	<script src="assets/libs/jquery-3.1.1.min.js"></script>
+	<script src="monaco-editor/min/vs/loader.js"></script>
+	<script src="assets/libs/default-setting.js" ,></script>
+  <script src="assets/libs/jquery.slim.min.js" ,></script>
+  <script src="assets/libs/utils.js"></script>
+  <script src="assets/libs/filereader-promise.js"></script>
+  <script src="assets/libs/chrome-promise.js"></script>
+  <script src="assets/libs/co.min.js"></script>
+	<script src="assets/js/injectJS.js"></script>
 </body>
 </html>

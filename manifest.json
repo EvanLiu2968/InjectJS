@@ -1,37 +1,51 @@
 {
 	"browser_action": {
 		"default_icon": "assets/icons/icon128.png",
+		"default_title": "Inject JS",
 		"default_popup": "index.html"
 	},
 	"background": {
 		//"persistent": false,
-		"scripts": ["assets/js/background.js"]
+		"scripts": [
+			"assets/libs/default-setting.js",
+      "assets/libs/jquery.slim.min.js",
+      "assets/libs/utils.js",
+      "assets/libs/filereader-promise.js",
+      "assets/libs/chrome-promise.js",
+      "assets/libs/co.min.js",
+			"assets/js/background.js"
+		]
 	},
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-	"description": "Run Some Simple Auto Tasks",
+	"description": "Inject custom JS for web developer",
 	"icons": {
 		"128": "assets/icons/icon128.png",
 		"16": "assets/icons/icon16.png",
 		"48": "assets/icons/icon48.png"
 	},
 	"permissions": [
+		"contextMenus",
 		"cookies",
 		"storage",
 		"webRequest",
-		"*"
+		"webRequestBlocking",
+		"tabs",
+		"http://*/*", // "<all_urls>"
+		"https://*/*"
 	],
 	"content_scripts": [{
-		"js": ["assets/js/jquery-3.1.1.min.js",
-				"assets/js/lodash.3.10.1.js",
-				"assets/js/js-cookie.js",
-				"assets/js/defaultTask.js"
+		"js": [
+			"assets/libs/jquery-3.1.1.min.js",
+			"assets/libs/lodash.3.10.1.js",
+			"assets/libs/js-cookie.js",
+			"assets/js/defaultTask.js"
 		],
-		"matches": ["https://www.baidu.com/*"],
-		"run_at": "document_end"
+		"matches": ["http://*/*","https://*/*"], // "<all_urls>"
+		"run_at": "document_idle" // start end idle(default,smart inject)
 	}],
 	// "key": "evanliu2968",
 	"manifest_version": 2,
-	"name": "Auto Task",
+	"name": "Inject JS",
 	// "update_url": "",
-	"version": "0.1"
+	"version": "0.1.1"
 }

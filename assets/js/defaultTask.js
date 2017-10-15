@@ -34,28 +34,29 @@ Date.prototype.format = function(fmt) {
 };
 (function() {
 	console.info("%c Inject JS is running at "+ new Date().format('yyyy-MM-dd HH:mm:ss 星期E'),"color:red");
-	function deleteCookie(name, path) {
-		var name = escape(name);
-		var expires = new Date(0);
-		path = path == "" ? "" : ";path=" + path;
-		document.cookie = name + "=" + ";expires=" + expires.toUTCString() + path;
-	}
-
-	function setCookie(name, value, hours, path) {
-		var name = escape(name);
-		var value = escape(value);
-		path = path == "" ? "" : ";path=" + path;
-		_expires = (typeof hours) == "string" ? "" : ";expires=" + hours.toUTCString();
-		document.cookie = name + "=" + value + _expires + path;
-	}
-
-	function getCookie(name) {
-		var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-
-		if (arr = document.cookie.match(reg))
-
-			return unescape(arr[2]);
-		else
-			return null;
-	}
 })();
+
+function deleteCookie(name, path) {
+	var name = escape(name);
+	var expires = new Date(0);
+	path = path == "" ? "" : ";path=" + path;
+	document.cookie = name + "=" + ";expires=" + expires.toUTCString() + path;
+}
+
+function setCookie(name, value, hours, path) {
+	var name = escape(name);
+	var value = escape(value);
+	path = path == "" ? "" : ";path=" + path;
+	_expires = (typeof hours) == "string" ? "" : ";expires=" + hours.toUTCString();
+	document.cookie = name + "=" + value + _expires + path;
+}
+
+function getCookie(name) {
+	var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+	if (arr = document.cookie.match(reg))
+
+		return unescape(arr[2]);
+	else
+		return null;
+}
