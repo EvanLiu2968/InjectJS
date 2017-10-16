@@ -20,8 +20,3 @@ chrome api中文文档：[https://chajian.baidu.com](https://chajian.baidu.com/d
 
 ### 核心API及关键点
 因为content_scripts运行于隔离环境，chrome.tabs获取的窗口也只是部分只读属性，将界面输入的JS如何注入页面并控制页面DOM是个关键，核心API chrome.tabs.executeScript~
-
-### 内置基础库
- - jquery-3.1.1.min.js
- - lodash.3.10.1.js
- - js-cookie.js

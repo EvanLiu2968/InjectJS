@@ -1,5 +1,5 @@
 body {
-	width: 400px;
+	width: 600px;
 }
 .panel {
 	margin-bottom: 0;
@@ -23,7 +23,7 @@ body {
 }
 .task-item-content>div {
 	float:left;
-	margin-right:10px;
+	margin-right:20px;
 }
 .task-message {
 	margin:0;

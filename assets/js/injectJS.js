@@ -1,11 +1,14 @@
 // injectJS.js
 require.config({ paths: { 'vs': 'monaco-editor/min/vs' }});
 require(['vs/editor/editor.main'], function() {
-	var $saveBtn=$("#saveBtn"),$closeBtn=$("#closeBtn"),$message=$(".task-message");
-	var defaultValue=`<script>\n
-		alert("inject JS is Running!");\n
-		document.title="inject JS | " + document.title;\n
-	</script>`;
+	var $saveBtn=$("#saveBtn"),$resetBtn=$("#resetBtn"),$message=$(".task-message");
+	var defaultValue=`<script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script>
+<!-- <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> -->
+<script src="https://cdn.bootcss.com/js-cookie/latest/js.cookie.js"></script>
+<script>
+	document.title="inject JS | " + document.title;
+	console.log("lodash version: "+_.VERSION);
+</script>`;
 	// init editor
 	var editor = monaco.editor.create(document.getElementById("editor"), {
 		value: defaultValue,
@@ -56,7 +59,10 @@ require(['vs/editor/editor.main'], function() {
 	
 		$(document.body).on('keypress', onSaveKeyup);
 	
-	
+		$resetBtn.on("click",function(){
+			editor.setValue(defaultValue);
+			onSaveClick();
+		})
 		$('#editor').on('drop', (event) => {
 			event.preventDefault();
 			console.log(event);
